@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAD_Project", "EAD_Project\EAD_Project.csproj", "{6C86D568-0A40-4D1C-9E2A-62CE1CEDA060}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB", "DB\DB.csproj", "{B3EB4EF3-5A83-486E-9080-817537BB8405}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataFramework", "DataFramework\DataFramework.csproj", "{B11FDA60-9A02-4F8D-902E-9116AF4F5058}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{B3EB4EF3-5A83-486E-9080-817537BB8405}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3EB4EF3-5A83-486E-9080-817537BB8405}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3EB4EF3-5A83-486E-9080-817537BB8405}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B11FDA60-9A02-4F8D-902E-9116AF4F5058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11FDA60-9A02-4F8D-902E-9116AF4F5058}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11FDA60-9A02-4F8D-902E-9116AF4F5058}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11FDA60-9A02-4F8D-902E-9116AF4F5058}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2576BB49-D261-44B5-85A6-EE710C068FD5}
 	EndGlobalSection
 EndGlobal

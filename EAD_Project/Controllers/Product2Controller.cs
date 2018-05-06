@@ -11,6 +11,12 @@ namespace EAD_Project.Controllers
 {
     public class Product2Controller : Controller
     {
+
+        public ActionResult IssueBook()
+        {
+            
+                return View();
+        }
         public ActionResult New()
         {
             return View();

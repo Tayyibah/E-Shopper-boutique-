@@ -1,21 +1,34 @@
 ﻿
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "IssueBook";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>IssueBook</h2>
+
+@*@section Header
+    {
+    }*@
+
 @section scripts {
+    <script type="text/javascript" src="@Url.Content("~/Scripts/mywebapp/Books/mywebapp.ui.issuebook.js")?s=@DateTime.UtcNow.Ticks"></script>
     <script src="~/Scripts/handlebars.js"></script>
-    <script src="~/Scripts/myapp.js"></script>
-    <script>
 
-        $(function () {
-            MyApp.Main();
+    <script type="text/javascript">
+        $(document).ready(function () {
+            MyWebApp.UI.IssueBook.readyMain();
         });
-
-
     </script>
-   }
-<body>
+    @*<script src="~/Scripts/myapp.js"></script>
+        <script>
+
+            $(function () {
+                MyApp.Main();
+            });
+
+
+        </script>*@
+}<body>
     @if (EAD_Project.Security.SessionManager.User.IsAdmin)
     {
         <h1><span class="item">Add </span>-Products </h1>
@@ -27,7 +40,7 @@
             <h2>Price<input type="text" name="Price" id="txtPrice" class="login-form" /> <br /></h2>
             Image<h2><input type="file" name="Image" id="myfile" class="login-form" /> <br /></h2>
 
-            <input type="button"  value="Save" id="btnSave1"  class="btn btn-default" />
+            <input type="button" value="Save" id="btnSave1" class="btn btn-default" />
             <input type="button" id="btnClear" value="Clear" class="btn btn-default" />
         </div>
     }
@@ -49,14 +62,14 @@
 
                 <p>E-SHOPPER is an online shopping centre where u will find all ur desires in less cost .So buy n sign up :)</p>
 
-@if (!EAD_Project.Security.SessionManager.User.IsAdmin)
-{
-                <form action="/Product2/addToCart" method="post">
-                    <input type="hidden" name="ProductID" id="{{ProductID}}" value="{{ProductID}}" />
-                    <input type="hidden" name="UserID" id="@EAD_Project.Security.SessionManager.User.UserID" value="@EAD_Project.Security.SessionManager.User.UserID" />
-                    <button type="submit" onclick="addToCart" id="addToCart" value="Get it now" class="btn btn-default get">Add To Cart</button>
-                </form>
-}
+                @if (!EAD_Project.Security.SessionManager.User.IsAdmin)
+                {
+                    <form action="/Product2/addToCart" method="post">
+                        <input type="hidden" name="ProductID" id="{{ProductID}}" value="{{ProductID}}" />
+                        <input type="hidden" name="UserID" id="@EAD_Project.Security.SessionManager.User.UserID" value="@EAD_Project.Security.SessionManager.User.UserID" />
+                        <button type="submit" onclick="addToCart" id="addToCart" value="Get it now" class="btn btn-default get">Add To Cart</button>
+                    </form>
+                }
 
             </div>
             <div class="col-sm-6">
@@ -65,8 +78,6 @@
                 <img src='@(Url.Content("/UploadedFiles"))/{{PictureName}}' class="girl img-responsive" alt="" />
                 @*"@(Url.Content("path of css"))"*@
                 @*<img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' class="girl img-responsive" alt="" />*@
-
-                @*<img class="nav-user-photo" id="mp" src="@Url.Content("~/images/avatars/web_hi_res_512.png")" />*@
             </div>
             <br />
             <br />
@@ -77,9 +88,9 @@
                 {
                     @*<button type="submit" onclick="addToCart" id="addToCart" value="Get it now" class="btn btn-default get">Add To Cart</button>*@
                     <a href="/Product/Edit/{{ProductID}}" class="btn btn-default" @*class="btn btn-default get"*@>Edit</a>
-                        <a href="/Product/Delete/{{ProductID}}" class="btn btn-default" @*class="btn btn-default get"*@>Delete</a>
-                        @*<input type="submit" value="Edit" class="editbutton" pid="{{ProductID}}" />*@
-                    
+                    <a href="/Product/Delete/{{ProductID}}" class="btn btn-default" @*class="btn btn-default get"*@>Delete</a>
+                    @*<input type="submit" value="Edit" class="editbutton" pid="{{ProductID}}" />*@
+
                 }
             </div>
 
@@ -87,43 +98,43 @@
             <div style="clear:both">
                 <input type="hidden" name="nothing" value="{{ProductID}}" />
             </div>
-                <div class="commentarea">
-                    <textarea class="txtComment" rows="1" cols="50"></textarea>
-                    <button id="addcomment" value="Add" class="addcomment">Add Comment</button>
-                </div>
-                <br />
-                <div class="comments">
-                    {{#each Comments}}
-                    <div class="comment">
-                        <div class="picture">
+            <div class="commentarea">
+                <textarea class="txtComment" rows="1" cols="50"></textarea>
+                <button id="addcomment" value="Add" class="addcomment">Add Comment</button>
+            </div>
+            <br />
+            <div class="comments">
+                {{#each Comments}}
+                <div class="comment">
+                    <div class="picture">
 
-                           @* <img src= '@Url.Content(Server.MapPath("~/UploadedFiles"))/{{PictureName}}' />*@
-                           @* <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />*@
-                            @*<img src= 'Server.MapPath("~/App_Data/UploadedFiles")/{{PictureName}}' />*@
-                            @*<img src='C:/Users/Tayyibah/Documents/GitHub/E-Shopper/EAD_Project/UploadedFiles/admin.jpg' />
+                        @* <img src= '@Url.Content(Server.MapPath("~/UploadedFiles"))/{{PictureName}}' />*@
+                        @* <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />*@
+                        @*<img src= 'Server.MapPath("~/App_Data/UploadedFiles")/{{PictureName}}' />*@
+                        @*<img src='C:/Users/Tayyibah/Documents/GitHub/E-Shopper/EAD_Project/UploadedFiles/admin.jpg' />
                             <img src={{PictureName}} />
                             <img src='~/UploadedFiles/{{PictureName}}' />*@
-                            <img src='@Url.Content("/UploadedFiles")/{{PictureName}}' />
-                                               </div>
-                            
-                                                    <div>
-                            
-                                                        <span class="name">{{UserName}}</span>
-                            <span class="comment-text"> {{CommentText}}</span> <br />
-                            <span class="comment-text commenton">{{CommentOn}}</span>
-                        </div>
+                        <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />
                     </div>
-                    <br />
-                    {{/each}}
 
+                    <div>
+
+                        <span class="name">{{UserName}}</span>
+                        <span class="comment-text"> {{CommentText}}</span> <br />
+                        <span class="comment-text commenton">{{CommentOn}}</span>
+                    </div>
                 </div>
+                <br />
+                {{/each}}
+
             </div>
+        </div>
         {{/each}}
     </script>
     <script id="commenttemplate" type="text/x-handlebars-template">
         <div class="comment">
             <div class="picture">
-                <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}'/>
+                <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />
             </div>
             <div>
                 <span class="name">{{UserName}}</span>
@@ -137,9 +148,9 @@
 </body>
 <script id="commenttemplate" type="text/x-handlebars-template">
     <div class="comment">
-        <div class="picture">           
-             @*<img src="~/UploadedFiles/")/{{PictureName}} />*@      
-              <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />
+        <div class="picture">
+            @*<img src="~/UploadedFiles/")/{{PictureName}} />*@
+            <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />
             @*<img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />*@
             @*<img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' />*@
         </div>
@@ -163,7 +174,7 @@
     {{#each data}}
     <div class="item" pid="{{ProductID}}">
 
-        <img src='@Url.Content("/UploadedFiles")/{{PictureName}}' style="width:100px;height:100px;" />
+        <img src='@Url.Content("~/UploadedFiles")/{{PictureName}}' style="width:100px;height:100px;" />
 
         <div style="float:left">
             Product Id: {{ProductID}} <br />
@@ -191,7 +202,7 @@
             <div class="comment" id="@EAD_Project.Security.SessionManager.User.UserID">
                 <div class="picture">
 
-                    <img src='@Url.Content("/UploadedFiles")/{{User.PictureName}}' />
+                    <img src='@Url.Content("~/UploadedFiles")/{{User.PictureName}}' />
                 </div>
                 <div>
                     <span class="name">{{UserName}}</span>

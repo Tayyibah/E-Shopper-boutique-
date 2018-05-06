@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -134,6 +135,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIControllers\MainController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\reply_form.cs" />
@@ -176,6 +178,7 @@
     <Compile Include="Models\contact_us.cs" />
     <Compile Include="Models\feedback.cs" />
     <Compile Include="Models\login_form.cs" />
+    <Compile Include="Models\MainRepository.cs" />
     <Compile Include="Models\MappingsModel.cs" />
     <Compile Include="Models\PhotoForSingleItem.cs" />
     <Compile Include="Models\PhotoViewImage.cs" />
@@ -201,6 +204,150 @@
     <Compile Include="Views\Home\EmailHandler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\UploadedFiles\098ef2c4-5458-45b6-a7da-db0c32d54cdf.jpg" />
+    <Content Include="App_Data\UploadedFiles\09973bb3-f676-410e-830e-c81ed885c066.PNG" />
+    <Content Include="App_Data\UploadedFiles\0b07b599-8948-4f5f-b5d6-0190b7f920d8.png" />
+    <Content Include="App_Data\UploadedFiles\0ccd2d9f-f408-415d-b6bb-8005abca41b3.jpg" />
+    <Content Include="App_Data\UploadedFiles\15ce1bc2-5101-4e11-a25f-c1cad166929d.jpg" />
+    <Content Include="App_Data\UploadedFiles\1ce31f4c-b4ff-43dc-b2d6-655e63106cdd.jpg" />
+    <Content Include="App_Data\UploadedFiles\1d756feb-3c7b-48dc-9602-7bf563fdec1c.png" />
+    <Content Include="App_Data\UploadedFiles\21fa5d97-4c4c-4bba-9528-c7d351efc820.png" />
+    <Content Include="App_Data\UploadedFiles\275b098c-e356-4006-b975-d09f972bc7b8.png" />
+    <Content Include="App_Data\UploadedFiles\2c9132c0-f717-4be9-aafa-cbe29be77707.jpg" />
+    <Content Include="App_Data\UploadedFiles\2e8af83f-0885-4208-9af2-c8801dbbb695.jpg" />
+    <Content Include="App_Data\UploadedFiles\345ded70-6fde-4e1c-82a3-6faf98160d7e.png" />
+    <Content Include="App_Data\UploadedFiles\3bb71d75-71f5-4629-9358-3b8acdf3fb3e.jpg" />
+    <Content Include="App_Data\UploadedFiles\42560c48-8158-4b0e-873e-ae67ea48c51d.jpg" />
+    <Content Include="App_Data\UploadedFiles\4913d191-7e55-448e-9559-8bf5c26bd261.jpg" />
+    <Content Include="App_Data\UploadedFiles\4a6083a7-560f-4415-8265-fd3b88164887.jpg" />
+    <Content Include="App_Data\UploadedFiles\4c57bc1b-2223-4985-8f34-b02bd0531b45.jpg" />
+    <Content Include="App_Data\UploadedFiles\5d5da99e-4fa5-42fe-9d97-fe52b792acd6.jpg" />
+    <Content Include="App_Data\UploadedFiles\5e2a95ea-5d44-4576-b2af-5c040440d01a.png" />
+    <Content Include="App_Data\UploadedFiles\5f83f91f-23e4-4a91-9fc0-c3a94e5596be.jpg" />
+    <Content Include="App_Data\UploadedFiles\60515102-66ef-4c16-8c60-5eabc16f00de.jpg" />
+    <Content Include="App_Data\UploadedFiles\60fcacf6-e488-4881-9b2c-6216cf58c292.jpg" />
+    <Content Include="App_Data\UploadedFiles\6777511c-5292-4f0a-b3a6-8ddce76752c9.jpg" />
+    <Content Include="App_Data\UploadedFiles\6ca194a0-5b2e-48fc-b414-17209a0e8ee6.png" />
+    <Content Include="App_Data\UploadedFiles\784d1d2f-2a13-4a8a-bb46-c2684b581013.jpg" />
+    <Content Include="App_Data\UploadedFiles\791cca44-dbde-48aa-9d97-45730c5b90e8.png" />
+    <Content Include="App_Data\UploadedFiles\7cdef5d9-3903-4b6e-b775-77a114c0654d.jpg" />
+    <Content Include="App_Data\UploadedFiles\855c997a-9f90-4b4d-b25c-4f354311e6bb.png" />
+    <Content Include="App_Data\UploadedFiles\85e8fdcd-8fa0-4912-ad66-fe209f595e4e.png" />
+    <Content Include="App_Data\UploadedFiles\8680f542-c579-497d-bd10-e06dc859e23f.png" />
+    <Content Include="App_Data\UploadedFiles\872e2879-401e-454e-a87b-8591744be5e5.jpg" />
+    <Content Include="App_Data\UploadedFiles\88c47ac3-18d1-4922-b503-a023bdc39cfe.png" />
+    <Content Include="App_Data\UploadedFiles\8aad100b-4087-4391-a215-6f8f8f9a3a14.jpg" />
+    <Content Include="App_Data\UploadedFiles\8e7b739b-2ff8-4af0-a1a1-937094fda313.png" />
+    <Content Include="App_Data\UploadedFiles\931f7a0d-77c5-473e-bd4a-cb39d41d622f.png" />
+    <Content Include="App_Data\UploadedFiles\9aa7488a-a3da-4c24-9434-6b2787b0ef11.jpg" />
+    <Content Include="App_Data\UploadedFiles\9ae148ea-dae8-485e-80f2-3a37adec1424.jpg" />
+    <Content Include="App_Data\UploadedFiles\9ca684d9-458c-4cdc-9edb-4041dfaa8418.jpg" />
+    <Content Include="App_Data\UploadedFiles\9eb7fdc4-304d-49bf-905b-a52573949f36.jpg" />
+    <Content Include="App_Data\UploadedFiles\a1cac352-51aa-49a2-9934-dd482ca0df4e.jpg" />
+    <Content Include="App_Data\UploadedFiles\a1f117ac-4e01-4457-97ec-49c1b3be9413.png" />
+    <Content Include="App_Data\UploadedFiles\a53e1f7d-8bec-468b-a87b-494b6600f44a.jpg" />
+    <Content Include="App_Data\UploadedFiles\a86adece-ad73-4410-ab3b-931c78d61f78.jpg" />
+    <Content Include="App_Data\UploadedFiles\a9b2c8c9-55cb-487c-8257-9aff5e54d13a.jpg" />
+    <Content Include="App_Data\UploadedFiles\ac4d97ea-f628-408d-9350-993c9ea15c8a.jpg" />
+    <Content Include="App_Data\UploadedFiles\admin.jpg" />
+    <Content Include="App_Data\UploadedFiles\aisha.jpg" />
+    <Content Include="App_Data\UploadedFiles\b1e5e298-a759-4d83-998b-90afa3a478cd.png" />
+    <Content Include="App_Data\UploadedFiles\b8ed48eb-4bc8-4cc3-b292-f49b17031b10.png" />
+    <Content Include="App_Data\UploadedFiles\bbc41305-e4e1-496d-9236-93ef171b86fc.png" />
+    <Content Include="App_Data\UploadedFiles\be3fea6e-a3b7-4ddc-96cd-c4d74d6fcb3f.jpg" />
+    <Content Include="App_Data\UploadedFiles\bfef2cbf-4e02-4abb-b65a-43dd13631bfe.jpg" />
+    <Content Include="App_Data\UploadedFiles\bg_border.png" />
+    <Content Include="App_Data\UploadedFiles\blushOn1.jpg" />
+    <Content Include="App_Data\UploadedFiles\blushOn2.png" />
+    <Content Include="App_Data\UploadedFiles\blushOn3.png" />
+    <Content Include="App_Data\UploadedFiles\blushOn4.png" />
+    <Content Include="App_Data\UploadedFiles\blushOn5.png" />
+    <Content Include="App_Data\UploadedFiles\blushOn6.png" />
+    <Content Include="App_Data\UploadedFiles\blushOn7.png" />
+    <Content Include="App_Data\UploadedFiles\boys.jpg" />
+    <Content Include="App_Data\UploadedFiles\c5b627ad-48b9-44d2-bc77-8d2164eda2b2.png" />
+    <Content Include="App_Data\UploadedFiles\c6bae47c-d5b4-491d-99f4-fdfba3faa1d0.png" />
+    <Content Include="App_Data\UploadedFiles\c6bc5214-3fc4-4517-9c8a-21c372a15b31.jpg" />
+    <Content Include="App_Data\UploadedFiles\c86e0449-f4c4-49d1-8ee8-2aae4f9dfbec.jpg" />
+    <Content Include="App_Data\UploadedFiles\cc4097fe-f153-4385-bec1-4317b92312e6.png" />
+    <Content Include="App_Data\UploadedFiles\d1274923-7b46-40e6-8a7d-d51a4d345e74.jpg" />
+    <Content Include="App_Data\UploadedFiles\d3b397aa-1a35-4c7a-9f97-21239b6008b0.jpg" />
+    <Content Include="App_Data\UploadedFiles\d49b7f6b-3547-4b77-bd4f-d37f9de8cd57.jpg" />
+    <Content Include="App_Data\UploadedFiles\d7fc86ca-8d93-42ce-b708-ba1cad830113.jpg" />
+    <Content Include="App_Data\UploadedFiles\e3560089-ccd9-4560-9c13-b4e8c71f4962.jpg" />
+    <Content Include="App_Data\UploadedFiles\ef167fb2-de1e-4da2-a6d4-65f213ef2614.jpg" />
+    <Content Include="App_Data\UploadedFiles\eye1.jpg" />
+    <Content Include="App_Data\UploadedFiles\eye2.jpg" />
+    <Content Include="App_Data\UploadedFiles\eye3.jpg" />
+    <Content Include="App_Data\UploadedFiles\eye4.jpg" />
+    <Content Include="App_Data\UploadedFiles\eyes.png" />
+    <Content Include="App_Data\UploadedFiles\f5532032-38c2-4aab-bba4-419c724457ee.jpg" />
+    <Content Include="App_Data\UploadedFiles\f5747691-0717-4657-b80a-d88c327e1652.jpg" />
+    <Content Include="App_Data\UploadedFiles\f8d7ff8c-edac-4e8a-b4b6-94c80f3a41c6.jpg" />
+    <Content Include="App_Data\UploadedFiles\face.png" />
+    <Content Include="App_Data\UploadedFiles\face1.jpg" />
+    <Content Include="App_Data\UploadedFiles\face2.png" />
+    <Content Include="App_Data\UploadedFiles\face3.jpg" />
+    <Content Include="App_Data\UploadedFiles\face4.jpg" />
+    <Content Include="App_Data\UploadedFiles\face5.jpg" />
+    <Content Include="App_Data\UploadedFiles\face6.jpg" />
+    <Content Include="App_Data\UploadedFiles\frock.jpg" />
+    <Content Include="App_Data\UploadedFiles\gallery1.jpg" />
+    <Content Include="App_Data\UploadedFiles\gallery2.jpg" />
+    <Content Include="App_Data\UploadedFiles\gallery3.jpg" />
+    <Content Include="App_Data\UploadedFiles\gallery4.jpg" />
+    <Content Include="App_Data\UploadedFiles\girl1.jpg" />
+    <Content Include="App_Data\UploadedFiles\girl2.jpg" />
+    <Content Include="App_Data\UploadedFiles\girl3.jpg" />
+    <Content Include="App_Data\UploadedFiles\girl4.jpg" />
+    <Content Include="App_Data\UploadedFiles\hina.jpg.png" />
+    <Content Include="App_Data\UploadedFiles\hina.png" />
+    <Content Include="App_Data\UploadedFiles\iframe1.png" />
+    <Content Include="App_Data\UploadedFiles\iframe2.png" />
+    <Content Include="App_Data\UploadedFiles\iframe3.png" />
+    <Content Include="App_Data\UploadedFiles\iframe4.png" />
+    <Content Include="App_Data\UploadedFiles\images.jpg" />
+    <Content Include="App_Data\UploadedFiles\images1.jpg" />
+    <Content Include="App_Data\UploadedFiles\images2.jpg" />
+    <Content Include="App_Data\UploadedFiles\images3.jpg" />
+    <Content Include="App_Data\UploadedFiles\images4.jpg" />
+    <Content Include="App_Data\UploadedFiles\images5.jpg" />
+    <Content Include="App_Data\UploadedFiles\lips.png" />
+    <Content Include="App_Data\UploadedFiles\lip_balm.jpg" />
+    <Content Include="App_Data\UploadedFiles\Lip_color.jpg" />
+    <Content Include="App_Data\UploadedFiles\lip_gloss.jpg" />
+    <Content Include="App_Data\UploadedFiles\lip_liner.jpg" />
+    <Content Include="App_Data\UploadedFiles\Login.html" />
+    <Content Include="App_Data\UploadedFiles\login.jpg" />
+    <Content Include="App_Data\UploadedFiles\logo.png" />
+    <Content Include="App_Data\UploadedFiles\man-four.jpg" />
+    <Content Include="App_Data\UploadedFiles\map.png" />
+    <Content Include="App_Data\UploadedFiles\megaclisk.jpg" />
+    <Content Include="App_Data\UploadedFiles\mona.jpg" />
+    <Content Include="App_Data\UploadedFiles\nail.jpg" />
+    <Content Include="App_Data\UploadedFiles\nail1.jpg" />
+    <Content Include="App_Data\UploadedFiles\nail2.jpg" />
+    <Content Include="App_Data\UploadedFiles\nail3.jpg" />
+    <Content Include="App_Data\UploadedFiles\nail4.png" />
+    <Content Include="App_Data\UploadedFiles\new.png" />
+    <Content Include="App_Data\UploadedFiles\partner1.png" />
+    <Content Include="App_Data\UploadedFiles\partner2.png" />
+    <Content Include="App_Data\UploadedFiles\partner3.png" />
+    <Content Include="App_Data\UploadedFiles\partner4.png" />
+    <Content Include="App_Data\UploadedFiles\pricing.png" />
+    <Content Include="App_Data\UploadedFiles\product1.jpg" />
+    <Content Include="App_Data\UploadedFiles\product2.jpg" />
+    <Content Include="App_Data\UploadedFiles\product3.jpg" />
+    <Content Include="App_Data\UploadedFiles\product4.jpg" />
+    <Content Include="App_Data\UploadedFiles\product5.jpg" />
+    <Content Include="App_Data\UploadedFiles\product6.jpg" />
+    <Content Include="App_Data\UploadedFiles\recommend1.jpg" />
+    <Content Include="App_Data\UploadedFiles\recommend2.jpg" />
+    <Content Include="App_Data\UploadedFiles\recommend3.jpg" />
+    <Content Include="App_Data\UploadedFiles\sale.png" />
+    <Content Include="App_Data\UploadedFiles\searchicon.png" />
+    <Content Include="App_Data\UploadedFiles\shipping.jpg" />
+    <Content Include="App_Data\UploadedFiles\user.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\404\404.png" />
@@ -323,6 +470,36 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\ajax_loader_blue_512.gif" />
+    <Content Include="images\avatars\avatar.png" />
+    <Content Include="images\avatars\avatar1.png" />
+    <Content Include="images\avatars\avatar2.png" />
+    <Content Include="images\avatars\avatar3.png" />
+    <Content Include="images\avatars\avatar4.png" />
+    <Content Include="images\avatars\avatar5.png" />
+    <Content Include="images\avatars\favicon.ico" />
+    <Content Include="images\avatars\profile-pic.jpg" />
+    <Content Include="images\avatars\user.png" />
+    <Content Include="images\avatars\web_hi_res_512.png" />
+    <Content Include="images\email\email1.png" />
+    <Content Include="images\email\email2.png" />
+    <Content Include="images\email\email3.png" />
+    <Content Include="images\email\email4.png" />
+    <Content Include="images\gallery\thumb-1.jpg" />
+    <Content Include="images\gallery\thumb-2.jpg" />
+    <Content Include="images\gallery\thumb-3.jpg" />
+    <Content Include="images\gallery\thumb-4.jpg" />
+    <Content Include="images\gallery\thumb-5.jpg" />
+    <Content Include="images\gallery\thumb-6.jpg" />
+    <Content Include="images\header_logo.png" />
+    <Content Include="images\placeholder\165x90.png" />
+    <Content Include="images\placeholder\255x150.png" />
+    <Content Include="images\placeholder\530x270.png" />
+    <Content Include="images\placeholder\550x280.png" />
+    <Content Include="images\pucit\header_logo.png" />
+    <Content Include="images\pucit\header_logo1.png" />
+    <Content Include="images\pucit\PUCIT_Logo.png" />
+    <Content Include="images\pucit\sign.png" />
     <Content Include="Scripts\addToCart.js" />
     <Content Include="Scripts\ajax.js" />
     <Content Include="Scripts\app3.js" />
@@ -359,6 +536,7 @@
     <Content Include="Scripts\myapp1.js" />
     <Content Include="Scripts\myapp2.js" />
     <Content Include="Scripts\MyAppGlobal.js" />
+    <Content Include="Scripts\mywebapp\Books\mywebapp.ui.issuebook.js" />
     <Content Include="Scripts\price-range.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -366,7 +544,158 @@
     <Content Include="Scripts\update.js" />
     <Content Include="Scripts\validationsNAjax.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="UploadedFiles\098ef2c4-5458-45b6-a7da-db0c32d54cdf.jpg" />
+    <Content Include="UploadedFiles\09973bb3-f676-410e-830e-c81ed885c066.PNG" />
+    <Content Include="UploadedFiles\0b07b599-8948-4f5f-b5d6-0190b7f920d8.png" />
+    <Content Include="UploadedFiles\0ccd2d9f-f408-415d-b6bb-8005abca41b3.jpg" />
+    <Content Include="UploadedFiles\15ce1bc2-5101-4e11-a25f-c1cad166929d.jpg" />
+    <Content Include="UploadedFiles\1d756feb-3c7b-48dc-9602-7bf563fdec1c.png" />
+    <Content Include="UploadedFiles\216c0762-c9ee-466c-b8c6-25c18f1a2192.PNG" />
+    <Content Include="UploadedFiles\21fa5d97-4c4c-4bba-9528-c7d351efc820.png" />
+    <Content Include="UploadedFiles\275b098c-e356-4006-b975-d09f972bc7b8.png" />
+    <Content Include="UploadedFiles\2e8af83f-0885-4208-9af2-c8801dbbb695.jpg" />
+    <Content Include="UploadedFiles\333283cb-ad85-406c-8254-9e976e2bd4e5.jpg" />
+    <Content Include="UploadedFiles\345ded70-6fde-4e1c-82a3-6faf98160d7e.png" />
+    <Content Include="UploadedFiles\3bb71d75-71f5-4629-9358-3b8acdf3fb3e.jpg" />
+    <Content Include="UploadedFiles\42560c48-8158-4b0e-873e-ae67ea48c51d.jpg" />
+    <Content Include="UploadedFiles\4913d191-7e55-448e-9559-8bf5c26bd261.jpg" />
+    <Content Include="UploadedFiles\4a6083a7-560f-4415-8265-fd3b88164887.jpg" />
+    <Content Include="UploadedFiles\4c0735f6-94dc-411a-81bd-9b505bc044d5.jpg" />
+    <Content Include="UploadedFiles\4c57bc1b-2223-4985-8f34-b02bd0531b45.jpg" />
+    <Content Include="UploadedFiles\55536e60-8e3d-4b02-9401-9859be4e4941.jpg" />
+    <Content Include="UploadedFiles\5d5da99e-4fa5-42fe-9d97-fe52b792acd6.jpg" />
+    <Content Include="UploadedFiles\5e2a95ea-5d44-4576-b2af-5c040440d01a.png" />
+    <Content Include="UploadedFiles\5f83f91f-23e4-4a91-9fc0-c3a94e5596be.jpg" />
+    <Content Include="UploadedFiles\60515102-66ef-4c16-8c60-5eabc16f00de.jpg" />
+    <Content Include="UploadedFiles\60fcacf6-e488-4881-9b2c-6216cf58c292.jpg" />
+    <Content Include="UploadedFiles\6777511c-5292-4f0a-b3a6-8ddce76752c9.jpg" />
+    <Content Include="UploadedFiles\695e024c-7fea-4622-bce0-4bc862ea451f.PNG" />
+    <Content Include="UploadedFiles\6ca194a0-5b2e-48fc-b414-17209a0e8ee6.png" />
+    <Content Include="UploadedFiles\784d1d2f-2a13-4a8a-bb46-c2684b581013.jpg" />
+    <Content Include="UploadedFiles\7905ae30-3457-403d-ab08-8db67d617fc8.PNG" />
+    <Content Include="UploadedFiles\791cca44-dbde-48aa-9d97-45730c5b90e8.png" />
+    <Content Include="UploadedFiles\7cdef5d9-3903-4b6e-b775-77a114c0654d.jpg" />
+    <Content Include="UploadedFiles\855c997a-9f90-4b4d-b25c-4f354311e6bb.png" />
+    <Content Include="UploadedFiles\85e8fdcd-8fa0-4912-ad66-fe209f595e4e.png" />
+    <Content Include="UploadedFiles\8680f542-c579-497d-bd10-e06dc859e23f.png" />
+    <Content Include="UploadedFiles\872e2879-401e-454e-a87b-8591744be5e5.jpg" />
+    <Content Include="UploadedFiles\88c47ac3-18d1-4922-b503-a023bdc39cfe.png" />
+    <Content Include="UploadedFiles\8aad100b-4087-4391-a215-6f8f8f9a3a14.jpg" />
+    <Content Include="UploadedFiles\8e7b739b-2ff8-4af0-a1a1-937094fda313.png" />
+    <Content Include="UploadedFiles\931f7a0d-77c5-473e-bd4a-cb39d41d622f.png" />
+    <Content Include="UploadedFiles\9aa7488a-a3da-4c24-9434-6b2787b0ef11.jpg" />
+    <Content Include="UploadedFiles\9ae148ea-dae8-485e-80f2-3a37adec1424.jpg" />
+    <Content Include="UploadedFiles\9ca684d9-458c-4cdc-9edb-4041dfaa8418.jpg" />
+    <Content Include="UploadedFiles\9eb7fdc4-304d-49bf-905b-a52573949f36.jpg" />
+    <Content Include="UploadedFiles\a1cac352-51aa-49a2-9934-dd482ca0df4e.jpg" />
+    <Content Include="UploadedFiles\a1f117ac-4e01-4457-97ec-49c1b3be9413.png" />
+    <Content Include="UploadedFiles\a53e1f7d-8bec-468b-a87b-494b6600f44a.jpg" />
+    <Content Include="UploadedFiles\a86adece-ad73-4410-ab3b-931c78d61f78.jpg" />
+    <Content Include="UploadedFiles\a9b2c8c9-55cb-487c-8257-9aff5e54d13a.jpg" />
+    <Content Include="UploadedFiles\ac4d97ea-f628-408d-9350-993c9ea15c8a.jpg" />
     <Content Include="UploadedFiles\admin.jpg" />
+    <Content Include="UploadedFiles\ae890a59-5c12-4e39-bb64-85baee6dd988.png" />
+    <Content Include="UploadedFiles\aisha.jpg" />
+    <Content Include="UploadedFiles\alvi.jpg" />
+    <Content Include="UploadedFiles\b1e5e298-a759-4d83-998b-90afa3a478cd.png" />
+    <Content Include="UploadedFiles\b8ed48eb-4bc8-4cc3-b292-f49b17031b10.png" />
+    <Content Include="UploadedFiles\bbc41305-e4e1-496d-9236-93ef171b86fc.png" />
+    <Content Include="UploadedFiles\be3fea6e-a3b7-4ddc-96cd-c4d74d6fcb3f.jpg" />
+    <Content Include="UploadedFiles\bfef2cbf-4e02-4abb-b65a-43dd13631bfe.jpg" />
+    <Content Include="UploadedFiles\bg_border.png" />
+    <Content Include="UploadedFiles\blushOn1.jpg" />
+    <Content Include="UploadedFiles\blushOn2.png" />
+    <Content Include="UploadedFiles\blushOn3.png" />
+    <Content Include="UploadedFiles\blushOn4.png" />
+    <Content Include="UploadedFiles\blushOn5.png" />
+    <Content Include="UploadedFiles\blushOn6.png" />
+    <Content Include="UploadedFiles\blushOn7.png" />
+    <Content Include="UploadedFiles\boys.jpg" />
+    <Content Include="UploadedFiles\c5b627ad-48b9-44d2-bc77-8d2164eda2b2.png" />
+    <Content Include="UploadedFiles\c6bae47c-d5b4-491d-99f4-fdfba3faa1d0.png" />
+    <Content Include="UploadedFiles\c6bc5214-3fc4-4517-9c8a-21c372a15b31.jpg" />
+    <Content Include="UploadedFiles\c86e0449-f4c4-49d1-8ee8-2aae4f9dfbec.jpg" />
+    <Content Include="UploadedFiles\cc4097fe-f153-4385-bec1-4317b92312e6.png" />
+    <Content Include="UploadedFiles\d1274923-7b46-40e6-8a7d-d51a4d345e74.jpg" />
+    <Content Include="UploadedFiles\d3b397aa-1a35-4c7a-9f97-21239b6008b0.jpg" />
+    <Content Include="UploadedFiles\d49b7f6b-3547-4b77-bd4f-d37f9de8cd57.jpg" />
+    <Content Include="UploadedFiles\d7fc86ca-8d93-42ce-b708-ba1cad830113.jpg" />
+    <Content Include="UploadedFiles\e3560089-ccd9-4560-9c13-b4e8c71f4962.jpg" />
+    <Content Include="UploadedFiles\eecb1821-28c0-4d1c-b641-e45ddfff8b63.PNG" />
+    <Content Include="UploadedFiles\ef167fb2-de1e-4da2-a6d4-65f213ef2614.jpg" />
+    <Content Include="UploadedFiles\ef3d61d4-1817-42fb-9912-e30111122ddd.PNG" />
+    <Content Include="UploadedFiles\eye1.jpg" />
+    <Content Include="UploadedFiles\eye2.jpg" />
+    <Content Include="UploadedFiles\eye3.jpg" />
+    <Content Include="UploadedFiles\eye4.jpg" />
+    <Content Include="UploadedFiles\eyes.png" />
+    <Content Include="UploadedFiles\f5532032-38c2-4aab-bba4-419c724457ee.jpg" />
+    <Content Include="UploadedFiles\f5747691-0717-4657-b80a-d88c327e1652.jpg" />
+    <Content Include="UploadedFiles\f8d7ff8c-edac-4e8a-b4b6-94c80f3a41c6.jpg" />
+    <Content Include="UploadedFiles\face.png" />
+    <Content Include="UploadedFiles\face1.jpg" />
+    <Content Include="UploadedFiles\face2.png" />
+    <Content Include="UploadedFiles\face3.jpg" />
+    <Content Include="UploadedFiles\face4.jpg" />
+    <Content Include="UploadedFiles\face5.jpg" />
+    <Content Include="UploadedFiles\face6.jpg" />
+    <Content Include="UploadedFiles\ffa8f890-de1b-4f6d-a8b0-68ba6bd63d47.jpg" />
+    <Content Include="UploadedFiles\frock.jpg" />
+    <Content Include="UploadedFiles\gallery1.jpg" />
+    <Content Include="UploadedFiles\gallery2.jpg" />
+    <Content Include="UploadedFiles\gallery3.jpg" />
+    <Content Include="UploadedFiles\gallery4.jpg" />
+    <Content Include="UploadedFiles\girl1.jpg" />
+    <Content Include="UploadedFiles\girl2.jpg" />
+    <Content Include="UploadedFiles\girl3.jpg" />
+    <Content Include="UploadedFiles\girl4.jpg" />
+    <Content Include="UploadedFiles\hina.jpg.png" />
+    <Content Include="UploadedFiles\hina.png" />
+    <Content Include="UploadedFiles\iframe1.png" />
+    <Content Include="UploadedFiles\iframe2.png" />
+    <Content Include="UploadedFiles\iframe3.png" />
+    <Content Include="UploadedFiles\iframe4.png" />
+    <Content Include="UploadedFiles\images.jpg" />
+    <Content Include="UploadedFiles\images1.jpg" />
+    <Content Include="UploadedFiles\images2.jpg" />
+    <Content Include="UploadedFiles\images3.jpg" />
+    <Content Include="UploadedFiles\images4.jpg" />
+    <Content Include="UploadedFiles\images5.jpg" />
+    <Content Include="UploadedFiles\lips.png" />
+    <Content Include="UploadedFiles\lip_balm.jpg" />
+    <Content Include="UploadedFiles\Lip_color.jpg" />
+    <Content Include="UploadedFiles\lip_gloss.jpg" />
+    <Content Include="UploadedFiles\lip_liner.jpg" />
+    <Content Include="UploadedFiles\Login.html" />
+    <Content Include="UploadedFiles\login.jpg" />
+    <Content Include="UploadedFiles\logo.png" />
+    <Content Include="UploadedFiles\man-four.jpg" />
+    <Content Include="UploadedFiles\map.png" />
+    <Content Include="UploadedFiles\megaclisk.jpg" />
+    <Content Include="UploadedFiles\mona.jpg" />
+    <Content Include="UploadedFiles\nail.jpg" />
+    <Content Include="UploadedFiles\nail1.jpg" />
+    <Content Include="UploadedFiles\nail2.jpg" />
+    <Content Include="UploadedFiles\nail3.jpg" />
+    <Content Include="UploadedFiles\nail4.png" />
+    <Content Include="UploadedFiles\new.png" />
+    <Content Include="UploadedFiles\partner1.png" />
+    <Content Include="UploadedFiles\partner2.png" />
+    <Content Include="UploadedFiles\partner3.png" />
+    <Content Include="UploadedFiles\partner4.png" />
+    <Content Include="UploadedFiles\pricing.png" />
+    <Content Include="UploadedFiles\product1.jpg" />
+    <Content Include="UploadedFiles\product2.jpg" />
+    <Content Include="UploadedFiles\product3.jpg" />
+    <Content Include="UploadedFiles\product4.jpg" />
+    <Content Include="UploadedFiles\product5.jpg" />
+    <Content Include="UploadedFiles\product6.jpg" />
+    <Content Include="UploadedFiles\recommend1.jpg" />
+    <Content Include="UploadedFiles\recommend2.jpg" />
+    <Content Include="UploadedFiles\recommend3.jpg" />
+    <Content Include="UploadedFiles\sale.png" />
+    <Content Include="UploadedFiles\searchicon.png" />
+    <Content Include="UploadedFiles\shipping.jpg" />
     <Content Include="UploadedFiles\user.jpg" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -434,10 +763,11 @@
     <Content Include="Views\Home\zz.cshtml" />
     <Content Include="Views\Home\Upload.cshtml" />
     <Content Include="Views\Home\II.cshtml" />
+    <Content Include="Views\Product2\IssueBook.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Content\images\abayas\" />
+    <Folder Include="NewFolder1\" />
     <Folder Include="Views\Document\" />
   </ItemGroup>
   <ItemGroup>
@@ -449,6 +779,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataFramework\DataFramework.csproj">
+      <Project>{b11fda60-9a02-4f8d-902e-9116af4f5058}</Project>
+      <Name>DataFramework</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DB\DB.csproj">
       <Project>{b3eb4ef3-5a83-486e-9080-817537bb8405}</Project>
       <Name>DB</Name>
@@ -468,7 +802,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51558</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
